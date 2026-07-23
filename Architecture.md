@@ -1,25 +1,5 @@
 # Architecture
 
-> **Reference Architecture for the Physics Learning Ecosystem**
-
-This document defines the reference architecture adopted by every repository within the Physics Learning ecosystem.
-
-It establishes a consistent architectural foundation that enables repositories to remain maintainable, scalable, reusable, and easy to understand for both human developers and AI agents.
-
-Implementation details are intentionally excluded from this document and are defined in their respective standards.
-
----
-
-# Purpose
-
-The purpose of this architecture is to provide a shared structural model for every repository in the project.
-
-Rather than prescribing technologies or frameworks, this document defines how software should be organized and how responsibilities should be separated.
-
-Every repository should follow this architecture unless there is a well-documented reason not to.
-
----
-
 # Architecture Philosophy
 
 The Physics Learning Project is built around one fundamental idea:
@@ -37,6 +17,26 @@ Programming languages advance.
 However, the educational content, physics models, and scientific principles remain stable.
 
 For this reason, every architectural decision should protect the Physics Domain from unnecessary dependencies on technology.
+
+---
+
+> **Reference Architecture for the Physics Learning Ecosystem**
+
+This document defines the reference architecture adopted by every repository within the Physics Learning ecosystem.
+
+It establishes a consistent architectural foundation that enables repositories to remain maintainable, scalable, reusable, and easy to understand for both human developers and AI agents.
+
+Implementation details are intentionally excluded from this document and are defined in their respective standards.
+
+---
+
+# Purpose
+
+The purpose of this architecture is to provide a shared structural model for every repository in the project.
+
+Rather than prescribing technologies or frameworks, this document defines how software should be organized and how responsibilities should be separated.
+
+Every repository should follow this architecture unless there is a well-documented reason not to.
 
 ---
 
@@ -191,9 +191,9 @@ This shared architecture ensures consistency across all repositories.
 
 ---
 
-# Shared Libraries
+# Shared Components
 
-Functionality that is used by multiple repositories should be extracted into shared libraries whenever appropriate.
+Functionality that is used by multiple repositories should be extracted into Shared Components whenever appropriate.
 
 Typical shared functionality includes:
 
@@ -203,7 +203,7 @@ Typical shared functionality includes:
 * Common UI components
 * Formula rendering utilities
 
-Repositories should reuse shared libraries instead of duplicating implementations.
+Repositories should reuse Shared Components instead of duplicating implementations.
 
 ---
 
@@ -253,14 +253,6 @@ Architecture should evolve deliberately rather than reactively.
 
 ---
 
-# Golden Rule
-
-> **Technology serves the Physics Domain.**
->
-> **The Physics Domain never serves technology.**
-
----
-
 # Architectural Decision Rationale
 
 The Physics Learning ecosystem adopts a **Domain-Centric Architecture** because the project's most valuable asset is not its technology stack, but its educational and scientific knowledge.
@@ -284,3 +276,42 @@ Technology supports the Physics Domain.
 The Physics Domain does not depend on technology.
 
 ---
+
+# Design Principles
+
+The reference architecture follows these principles:
+
+- Domain First
+- Separation of Responsibilities
+- Low Coupling
+- High Cohesion
+- Reusability
+- Simplicity
+
+-----
+
+# Shared Component Guidelines
+
+A module should be extracted into a shared library when:
+
+- It is reused by multiple repositories.
+- It represents stable domain knowledge.
+- It has independent value.
+- It reduces duplication.
+-----
+
+# Golden Rule
+
+Every architectural decision within the Physics Learning ecosystem should follow one fundamental principle:
+
+> **Technology serves the Physics Domain.**
+>
+> **The Physics Domain never serves technology.**
+
+When making architectural decisions, always prioritize preserving the independence of the Physics Domain over adopting new technologies or frameworks.
+
+If a technology introduces unnecessary coupling to the Physics Domain, the architecture should be reconsidered.
+
+This principle ensures that educational knowledge remains reusable, maintainable, and resilient to future technological changes.
+
+-----
