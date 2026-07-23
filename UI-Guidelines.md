@@ -36,7 +36,7 @@ User interfaces should follow these principles:
 * Clear visual hierarchy.
 * Minimize unnecessary cognitive load.
 
-The interface should support learning—not distract from it.
+The interface should support learning, reduce cognitive load, and never distract from the educational experience.
 
 ---
 
